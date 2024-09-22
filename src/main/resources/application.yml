@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: accounts
+  jpa:
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+    database: mysql
+    show-sql: true
+  datasource:
+    username: root
+    password: Safras@@6747@@
+    url: jdbc:mysql://localhost:3306/accounts
+server:
+  port: 8080
