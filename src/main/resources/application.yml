@@ -8,8 +8,8 @@ spring:
     database: mysql
     show-sql: true
   datasource:
-    username: root
-    password: Safras@@6747@@
-    url: jdbc:mysql://localhost:3306/accounts
+    username: ${db_username}
+    password: ${db_password}
+    url: ${db_url}
 server:
   port: 8080

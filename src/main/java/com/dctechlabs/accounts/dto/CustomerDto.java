@@ -1,10 +1,7 @@
 package com.dctechlabs.accounts.dto;
 
 import jakarta.validation.Valid;
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Pattern;
+import jakarta.validation.constraints.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -15,21 +12,20 @@ import org.springframework.format.annotation.NumberFormat;
 @NoArgsConstructor
 public class CustomerDto {
 
-    @NotNull(message = "customer name should not be empty")
+    @NotEmpty(message = "customer name can not be null or empty")
+    @Size(min=5,max=30,message =  "The length of the customer name should be between 5 and 30")
     private String customerName;
 
-    @NotBlank(message = "Email cannot be blank")
+    @NotEmpty(message = "Email can not be null or empty")
     @Email(message = "Email should be valid")
-    @Pattern(
-            regexp = "^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}$",
-            message = "Invalid email format"
-    )
-    private String CustomerEmail;
+    private String customerEmail;
 
-    @NotBlank(message = "customer mobile number should not be empty")
+    @NotEmpty(message = "customer mobile number can not be null or empty")
     @Pattern(
             regexp = "^\\+?[0-9]{10,15}$",
             message = "Invalid phone number. It should contain 10-15 digits and can start with a '+' for the country code."
     )
     private String mobileNumber;
+
+    AccountsDto accounts;
 }
