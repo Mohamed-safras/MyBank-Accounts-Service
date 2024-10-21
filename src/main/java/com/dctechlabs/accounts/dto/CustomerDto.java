@@ -1,12 +1,10 @@
 package com.dctechlabs.accounts.dto;
 
 import io.swagger.v3.oas.annotations.media.Schema;
-import jakarta.validation.Valid;
 import jakarta.validation.constraints.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.format.annotation.NumberFormat;
 
 @Data
 @AllArgsConstructor
@@ -51,5 +49,5 @@ public class CustomerDto {
             name = "Accounts",
             description = "Account details of the Customer"
     )
-    AccountsDto accounts;
+    private AccountsDto accounts;
 }
