@@ -1,6 +1,5 @@
 package com.dctechlabs.accounts.service.impl;
 
-import com.dctechlabs.accounts.constants.AccountType;
 import com.dctechlabs.accounts.constants.AccountsConstants;
 import com.dctechlabs.accounts.dto.AccountsDto;
 import com.dctechlabs.accounts.dto.CustomerDto;
@@ -16,7 +15,6 @@ import com.dctechlabs.accounts.service.IAccountsService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDateTime;
 import java.util.Optional;
 import java.util.Random;
 
@@ -24,8 +22,8 @@ import java.util.Random;
 @AllArgsConstructor
 public class AccountsServiceImpl implements IAccountsService {
 
-    private AccountsRepository accountsRepository;
-    private CustomerRepository customerRepository;
+    private final AccountsRepository accountsRepository;
+    private final CustomerRepository customerRepository;
 
     /**
      * @param mobileNumber - pass mobile number as parameter
@@ -50,7 +48,7 @@ public class AccountsServiceImpl implements IAccountsService {
      * @param customerDto - CustomerDto object
      */
     @Override
-    public void createAccount(CustomerDto customerDto) {
+    public Accounts createAccount(CustomerDto customerDto) {
         Customer customer = CustomerMapper.mapToCustomer(customerDto, new Customer());
         Optional<Customer> optionalCustomer = customerRepository.findByMobileNumber(customerDto.getMobileNumber());
         if (optionalCustomer.isPresent()) {
@@ -58,7 +56,9 @@ public class AccountsServiceImpl implements IAccountsService {
                     + customerDto.getMobileNumber());
         }
         Customer savedCustomer = customerRepository.save(customer);
-        accountsRepository.save(createNewAccount(savedCustomer));
+
+        return accountsRepository.save(createNewAccount(savedCustomer));
+
     }
 
     private Accounts createNewAccount(Customer customer) {
@@ -115,4 +115,5 @@ public class AccountsServiceImpl implements IAccountsService {
 
         return true;
     }
+
 }
