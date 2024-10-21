@@ -1,7 +1,6 @@
 package com.dctechlabs.accounts.service.impl;
 
 import com.dctechlabs.accounts.dto.TransferRequestDto;
-import com.dctechlabs.accounts.entity.Accounts;
 import com.dctechlabs.accounts.entity.Transfer;
 import com.dctechlabs.accounts.repository.TransferRepository;
 import com.dctechlabs.accounts.service.IScheduledTransferService;
@@ -9,7 +8,6 @@ import lombok.AllArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
