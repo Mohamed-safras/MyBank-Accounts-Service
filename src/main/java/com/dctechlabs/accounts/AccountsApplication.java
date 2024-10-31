@@ -28,7 +28,7 @@ import java.util.Arrays;
                 description = "MyBank Account microservice REST API documentation",
                 version = "v1",
                 contact = @Contact(
-                        name = "Mohamed Safras",
+                        name = "Mohamed Safras -->",
                         email = "mohamed.safras@acentura.com"
                 ),
                 license = @License(
