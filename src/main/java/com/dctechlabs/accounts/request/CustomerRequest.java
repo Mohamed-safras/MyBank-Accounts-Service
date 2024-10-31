@@ -1,4 +1,4 @@
-package com.dctechlabs.accounts.dto;
+package com.dctechlabs.accounts.request;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.*;
@@ -13,7 +13,7 @@ import lombok.NoArgsConstructor;
         name = "Customer",
         description = "Schema to hold Customer and Account information"
 )
-public class CustomerDto {
+public class CustomerRequest {
 
     @Schema(
             name = "Customer Name",
@@ -46,8 +46,8 @@ public class CustomerDto {
     private String mobileNumber;
 
     @Schema(
-            name = "Accounts",
+            name = "Account",
             description = "Account details of the Customer"
     )
-    private AccountsDto accounts;
+    private AccountsRequest accounts;
 }
