@@ -1,15 +1,47 @@
 spring:
   application:
-    name: accounts
+    name: "accounts"
+  profiles:
+    active: ${SPRING_PROFILES_ACTIVE}
+  config:
+    import: "optional:configserver:http://localhost:8071"
   jpa:
     generate-ddl: true
     hibernate:
-      ddl-auto: update
-    database: mysql
+      ddl-auto: update  # Consider changing to 'none' or 'validate' in production
     show-sql: true
   datasource:
-    username: ${db_username}
-    password: ${db_password}
-    url: ${db_url}
+    username: ${SPRING_DATASOURCE_USERNAME}
+    password: ${SPRING_DATASOURCE_PASSWORD}
+    url: ${SPRING_DATASOURCE_URL}
+  kafka:
+    bootstrap-servers: localhost:9092  # Updated to point to the Kafka service
+    client-id: ${spring.application.name}_${random.uuid}
+  cloud:
+    bus:
+      id: ${spring.application.name}:${spring.profiles.active}:${random.uuid}
+      enabled: true
+      refresh:
+        enabled: true
+      env:
+        enabled: true
+    config:
+      uri: ${config.url:http://localhost:8071}
+      name: ${spring.application.name}
+
 server:
   port: 8080
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+
+management:
+  endpoint:
+    info:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+    enabled-by-default: true
+

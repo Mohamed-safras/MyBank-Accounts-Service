@@ -1,10 +1,8 @@
 package com.dctechlabs.accounts.service.impl;
 
-import com.dctechlabs.accounts.constants.AccountType;
-import com.dctechlabs.accounts.constants.AccountsConstants;
-import com.dctechlabs.accounts.dto.AccountsDto;
-import com.dctechlabs.accounts.dto.CustomerDto;
-import com.dctechlabs.accounts.entity.Accounts;
+import com.dctechlabs.accounts.entity.Account;
+import com.dctechlabs.accounts.utils.constants.AccountsConstants;
+import com.dctechlabs.accounts.request.CustomerRequest;
 import com.dctechlabs.accounts.entity.Customer;
 import com.dctechlabs.accounts.exception.ResourceNotFoundException;
 import com.dctechlabs.accounts.exception.CustomerAlreadyExistsException;
@@ -12,11 +10,11 @@ import com.dctechlabs.accounts.mapper.AccountsMapper;
 import com.dctechlabs.accounts.mapper.CustomerMapper;
 import com.dctechlabs.accounts.repository.AccountsRepository;
 import com.dctechlabs.accounts.repository.CustomerRepository;
+import com.dctechlabs.accounts.request.AccountsRequest;
 import com.dctechlabs.accounts.service.IAccountsService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDateTime;
 import java.util.Optional;
 import java.util.Random;
 
@@ -24,45 +22,47 @@ import java.util.Random;
 @AllArgsConstructor
 public class AccountsServiceImpl implements IAccountsService {
 
-    private AccountsRepository accountsRepository;
-    private CustomerRepository customerRepository;
+    private final AccountsRepository accountsRepository;
+    private final CustomerRepository customerRepository;
 
     /**
      * @param mobileNumber - pass mobile number as parameter
      */
     @Override
-    public CustomerDto fetchAccount(String mobileNumber) {
+    public CustomerRequest fetchAccount(String mobileNumber) {
 
         Customer customer = customerRepository.findByMobileNumber(mobileNumber).orElseThrow(() -> new ResourceNotFoundException("Customer", "mobileNumber", mobileNumber));
 
-        Accounts accounts = accountsRepository.findByCustomerId(customer.getCustomerId()).orElseThrow(() -> new ResourceNotFoundException("Account", "customer id", customer.getCustomerId().toString()));
+        Account account = accountsRepository.findByCustomerId(customer.getCustomerId()).orElseThrow(() -> new ResourceNotFoundException("Account", "customer id", customer.getCustomerId().toString()));
 
-        CustomerDto customerDto = CustomerMapper.mapToCustomerDto(customer, new CustomerDto());
+        CustomerRequest customerRequest = CustomerMapper.mapToCustomerDto(customer, new CustomerRequest());
 
-        customerDto.setAccounts(AccountsMapper.mapToAccountsDto(accounts, new AccountsDto()));
+        customerRequest.setAccounts(AccountsMapper.mapToAccountsDto(account, new AccountsRequest()));
 
-        return customerDto;
+        return customerRequest;
 
     }
 
 
     /**
-     * @param customerDto - CustomerDto object
+     * @param customerRequest - CustomerDto object
      */
     @Override
-    public void createAccount(CustomerDto customerDto) {
-        Customer customer = CustomerMapper.mapToCustomer(customerDto, new Customer());
-        Optional<Customer> optionalCustomer = customerRepository.findByMobileNumber(customerDto.getMobileNumber());
+    public Account createAccount(CustomerRequest customerRequest) {
+        Customer customer = CustomerMapper.mapToCustomer(customerRequest, new Customer());
+        Optional<Customer> optionalCustomer = customerRepository.findByMobileNumber(customerRequest.getMobileNumber());
         if (optionalCustomer.isPresent()) {
             throw new CustomerAlreadyExistsException("Customer already registered with given mobile number "
-                    + customerDto.getMobileNumber());
+                    + customerRequest.getMobileNumber());
         }
         Customer savedCustomer = customerRepository.save(customer);
-        accountsRepository.save(createNewAccount(savedCustomer));
+
+        return accountsRepository.save(createNewAccount(savedCustomer));
+
     }
 
-    private Accounts createNewAccount(Customer customer) {
-        Accounts newAccount = new Accounts();
+    private Account createNewAccount(Customer customer) {
+        Account newAccount = new Account();
         newAccount.setCustomerId(customer.getCustomerId());
         long randomAccNumber = 100000000000L + new Random().nextLong(900000000);
 
@@ -73,24 +73,24 @@ public class AccountsServiceImpl implements IAccountsService {
     }
 
     /**
-     * @param customerDto
+     * @param customerRequest
      */
     @Override
-    public boolean updateAccount(CustomerDto customerDto) {
+    public boolean updateAccount(CustomerRequest customerRequest) {
         boolean isUpdated = false;
 
-        AccountsDto accountsDto = customerDto.getAccounts();
-        System.out.println(accountsDto);
-        if (accountsDto != null) {
-            Accounts accounts = accountsRepository.findById(accountsDto.getAccountNumber()).orElseThrow(() -> new ResourceNotFoundException("Account", "account number", Long.toString(accountsDto.getAccountNumber())));
-            AccountsMapper.mapToAccounts(accountsDto, accounts);
-            accountsRepository.save(accounts);
+        AccountsRequest accountsRequest = customerRequest.getAccounts();
 
-            Long customerId = accounts.getCustomerId();
+        if (accountsRequest != null) {
+            Account account = accountsRepository.findById(accountsRequest.getAccountNumber()).orElseThrow(() -> new ResourceNotFoundException("Account", "account number", Long.toString(accountsRequest.getAccountNumber())));
+            AccountsMapper.mapToAccounts(accountsRequest, account);
+            accountsRepository.save(account);
+
+            Long customerId = account.getCustomerId();
 
             Customer customer = customerRepository.findById(customerId).orElseThrow(() -> new ResourceNotFoundException("Customer", "customer id", Long.toString(customerId)));
 
-            CustomerMapper.mapToCustomer(customerDto, customer);
+            CustomerMapper.mapToCustomer(customerRequest, customer);
             customerRepository.save(customer);
             isUpdated = true;
         }
@@ -115,4 +115,5 @@ public class AccountsServiceImpl implements IAccountsService {
 
         return true;
     }
+
 }

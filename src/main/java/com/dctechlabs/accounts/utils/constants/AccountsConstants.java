@@ -1,4 +1,4 @@
-package com.dctechlabs.accounts.constants;
+package com.dctechlabs.accounts.utils.constants;
 
 public class AccountsConstants {
     private AccountsConstants() {
@@ -12,5 +12,7 @@ public class AccountsConstants {
     public static final String MESSAGE_200 = "Request processed successfully";
     public static final String STATUS_500 = "500";
     public static final String MESSAGE_500 = "An error occurred. please try again or contact dev team";
-
+    public static final String STATUS_417 = "417";
+    public static final String MESSAGE_417_UPDATE = "Update operation failed, please try again or contact dev team";
+    public static final String MESSAGE_417_DELETE = "Delete operation failed, please try again or contact dev team";
 }
