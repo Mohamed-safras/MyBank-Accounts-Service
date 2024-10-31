@@ -1,4 +1,4 @@
-package com.dctechlabs.accounts.kafka.serializer;
+package com.dctechlabs.accounts.config.kafka.serializer;
 
 import com.dctechlabs.accounts.entity.Customer;
 import org.apache.kafka.common.serialization.Serializer;

@@ -1,4 +1,4 @@
-package com.dctechlabs.accounts.constants;
+package com.dctechlabs.accounts.utils.constants;
 
 public class AccountsConstants {
     private AccountsConstants() {

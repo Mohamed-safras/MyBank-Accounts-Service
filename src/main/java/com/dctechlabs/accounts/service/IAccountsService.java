@@ -1,29 +1,29 @@
 package com.dctechlabs.accounts.service;
 
-import com.dctechlabs.accounts.dto.CustomerDto;
-import com.dctechlabs.accounts.entity.Accounts;
+import com.dctechlabs.accounts.entity.Account;
+import com.dctechlabs.accounts.request.CustomerRequest;
 
 public interface IAccountsService {
 
     /**
      *
-     * @param customerDto - CustomerDto object
+     * @param customerRequest - CustomerDto object
      */
-    Accounts createAccount(CustomerDto customerDto);
+    Account createAccount(CustomerRequest customerRequest);
 
     /**
      *
      * @param mobileNumber - fetchAccount takes mobile number as a parameter
      * @return - it returns CustomerDto object
      */
-    CustomerDto fetchAccount(String mobileNumber);
+    CustomerRequest fetchAccount(String mobileNumber);
 
     /**
      *
-     * @param customerDto - updateAccount takes CustomerDto object as a parameter
+     * @param customerRequest - updateAccount takes CustomerDto object as a parameter
      * @return it returns boolean value
      */
-    boolean updateAccount(CustomerDto customerDto);
+    boolean updateAccount(CustomerRequest customerRequest);
 
     /**
      *

@@ -1,7 +1,7 @@
 package com.dctechlabs.accounts.exception;
 
 
-import com.dctechlabs.accounts.dto.ErrorResponseDto;
+import com.dctechlabs.accounts.response.ErrorResponse;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
@@ -23,33 +23,33 @@ import java.util.Map;
 public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 
     @ExceptionHandler(Exception.class)
-    public ResponseEntity<ErrorResponseDto> handleGlobalException(Exception exception, WebRequest webRequest){
-        ErrorResponseDto errorResponseDto = new ErrorResponseDto(
+    public ResponseEntity<ErrorResponse> handleGlobalException(Exception exception, WebRequest webRequest){
+        ErrorResponse errorResponse = new ErrorResponse(
                 webRequest.getDescription(false),
                 HttpStatus.INTERNAL_SERVER_ERROR,
                 exception.getMessage(),
                 LocalDateTime.now());
-        return new ResponseEntity<>(errorResponseDto,HttpStatus.INTERNAL_SERVER_ERROR);
+        return new ResponseEntity<>(errorResponse,HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
     @ExceptionHandler(CustomerAlreadyExistsException.class)
-    public ResponseEntity<ErrorResponseDto> handleCustomerAlreadyExistsException(CustomerAlreadyExistsException exception, WebRequest webRequest){
-        ErrorResponseDto errorResponseDto = new ErrorResponseDto(
+    public ResponseEntity<ErrorResponse> handleCustomerAlreadyExistsException(CustomerAlreadyExistsException exception, WebRequest webRequest){
+        ErrorResponse errorResponse = new ErrorResponse(
                 webRequest.getDescription(false),
                 HttpStatus.BAD_REQUEST,
                 exception.getMessage(),
                 LocalDateTime.now());
-        return new ResponseEntity<>(errorResponseDto,HttpStatus.BAD_REQUEST);
+        return new ResponseEntity<>(errorResponse,HttpStatus.BAD_REQUEST);
     }
 
     @ExceptionHandler(ResourceNotFoundException.class)
-    public ResponseEntity<ErrorResponseDto> handleResourceNotFoundExceptionException(ResourceNotFoundException exception, WebRequest webRequest){
-        ErrorResponseDto errorResponseDto = new ErrorResponseDto(
+    public ResponseEntity<ErrorResponse> handleResourceNotFoundExceptionException(ResourceNotFoundException exception, WebRequest webRequest){
+        ErrorResponse errorResponse = new ErrorResponse(
                 webRequest.getDescription(false),
                 HttpStatus.NOT_FOUND,
                 exception.getMessage(),
                 LocalDateTime.now());
-        return new ResponseEntity<>(errorResponseDto,HttpStatus.NOT_FOUND);
+        return new ResponseEntity<>(errorResponse,HttpStatus.NOT_FOUND);
     }
 
     /**
