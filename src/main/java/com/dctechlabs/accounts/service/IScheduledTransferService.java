@@ -1,8 +1,8 @@
 package com.dctechlabs.accounts.service;
 
 
-import com.dctechlabs.accounts.dto.TransferRequestDto;
+import com.dctechlabs.accounts.request.TransferRequest;
 
 public interface IScheduledTransferService {
-    void scheduleTransfer(TransferRequestDto transferRequestDto);
+    void scheduleTransfer(TransferRequest transferRequest);
 }

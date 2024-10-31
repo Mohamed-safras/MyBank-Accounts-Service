@@ -1,8 +1,8 @@
 package com.dctechlabs.accounts.controller;
 
-import com.dctechlabs.accounts.constants.AccountsConstants;
-import com.dctechlabs.accounts.dto.ResponseDto;
-import com.dctechlabs.accounts.dto.TransferRequestDto;
+import com.dctechlabs.accounts.utils.constants.AccountsConstants;
+import com.dctechlabs.accounts.response.ApiResponse;
+import com.dctechlabs.accounts.request.TransferRequest;
 import com.dctechlabs.accounts.service.IScheduledTransferService;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.AllArgsConstructor;
@@ -25,9 +25,9 @@ public class TransferController {
     private IScheduledTransferService scheduledTransferService;
 
     @PostMapping("/schedule")
-    public ResponseEntity<ResponseDto> scheduleTransfer(@RequestBody TransferRequestDto transferRequestDto){
+    public ResponseEntity<ApiResponse<?>> scheduleTransfer(@RequestBody TransferRequest transferRequest){
 
-        scheduledTransferService.scheduleTransfer(transferRequestDto);
-        return ResponseEntity.status(HttpStatus.OK).body(new ResponseDto(AccountsConstants.STATUS_201,"Money transferred successfully"));
+        scheduledTransferService.scheduleTransfer(transferRequest);
+        return ResponseEntity.status(HttpStatus.OK).body(new ApiResponse<>(AccountsConstants.STATUS_201,"Money transferred successfully",null));
     }
 }
