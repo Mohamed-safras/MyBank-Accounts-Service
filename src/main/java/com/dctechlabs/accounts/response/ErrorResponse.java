@@ -1,4 +1,4 @@
-package com.dctechlabs.accounts.dto;
+package com.dctechlabs.accounts.response;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;
@@ -15,7 +15,7 @@ import java.time.LocalDateTime;
         name = "Error Response",
         description = "Schema to hold error response information"
 )
-public class ErrorResponseDto {
+public class ErrorResponse {
     @Schema(
             name = "Api Path invoked by client",
             description = "Api path of the error"
