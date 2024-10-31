@@ -1,4 +1,4 @@
-package com.dctechlabs.accounts.kafka.config;
+package com.dctechlabs.accounts.config.kafka;
 
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.common.serialization.StringSerializer;

@@ -1,4 +1,4 @@
-package com.dctechlabs.accounts.kafka.sender;
+package com.dctechlabs.accounts.config.kafka.sender;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.core.KafkaTemplate;
