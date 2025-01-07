@@ -4,23 +4,23 @@ import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
-@NoArgsConstructor
-@AllArgsConstructor
-@ToString
 @Getter
 @Setter
-public class Customer extends BaseEntity{
+@ToString
+@AllArgsConstructor
+@NoArgsConstructor
+public class Customer extends BaseEntity {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "customer_id")
     private Long customerId;
 
-    @Column(name = "customer_name")
-    private String customerName;
+    private String name;
 
-    @Column(name = "customer_email")
-    private String CustomerEmail;
+    private String email;
 
     @Column(name = "mobile_number")
     private String mobileNumber;
+
 }

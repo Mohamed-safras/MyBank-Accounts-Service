@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="fa17c486-b091-4d59-90be-c0ac166b1119" name="Changes" comment="accounts has been updated">
+      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dctechlabs/accounts/constants/AccountsConstants.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dctechlabs/accounts/dto/AccountsContactInfoDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dctechlabs/accounts/dto/AccountsDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dctechlabs/accounts/dto/CustomerDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dctechlabs/accounts/dto/ErrorResponseDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dctechlabs/accounts/dto/ResponseDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dctechlabs/accounts/entity/Accounts.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/schema.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/accounts-0.0.1-SNAPSHOT.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/eazybytes/accounts/AccountsApplication.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/eazybytes/accounts/audit/AuditAwareImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/eazybytes/accounts/config/kafka/KafkaConsumerConfig.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/eazybytes/accounts/config/kafka/KafkaMessageSender.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/eazybytes/accounts/config/kafka/KafkaProducerConfig.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/eazybytes/accounts/config/kafka/KafkaTopicConfig.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/eazybytes/accounts/constants/AccountsConstants.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/eazybytes/accounts/controller/AccountsController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/eazybytes/accounts/dto/AccountsContactInfoDto.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/eazybytes/accounts/dto/AccountsDto.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/eazybytes/accounts/dto/CustomerDto.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/eazybytes/accounts/dto/ErrorResponseDto.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/eazybytes/accounts/dto/ResponseDto.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/eazybytes/accounts/entity/Accounts.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/eazybytes/accounts/entity/BaseEntity.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/eazybytes/accounts/entity/Customer.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/eazybytes/accounts/exception/CustomerAlreadyExistsException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/eazybytes/accounts/exception/GlobalExceptionHandler.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/eazybytes/accounts/exception/ResourceNotFoundException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/eazybytes/accounts/mapper/AccountsMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/eazybytes/accounts/mapper/CustomerMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/eazybytes/accounts/repository/AccountsRepository.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/eazybytes/accounts/repository/CustomerRepository.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/eazybytes/accounts/service/IAccountsService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/eazybytes/accounts/service/impl/AccountsServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/schema.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/jib-cache/jib-classpath-file" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/jib-cache/jib-main-class-file" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/jib-cache/layers/1578fc5cc839ac8bf7e22af2f59335722eb77758a74232da1ba845870c054433/9c40e5f361e4881372662b54f7628db88f16470024f71c20cb132c403290b4cf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/jib-cache/layers/3d6d38f3042b31712ed9d837b7a18f6bef5982306d1c9ad9e91ed564e3ca9a76/ddec0beb9a4db375d59222de94925a0d188c54308f9b6c526ec593f0f0f07b99" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/jib-cache/layers/d951d0d5c7f27be67564a8e449cbf6f140c86dbdc72f404b165e2ef15ef4f6c6/7947c5d8fc6ac7783035ea0a8d9cc755dd7583d387bf1761bad8bf3c0e9c0e69" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/jib-cache/layers/f84812c82e8f960dfe1eb77931bb6864c4e08d4c4f91f431ca3ff7b0fa3bf9d2/f0016a3bb99f5367a08b72163e14a0b542dac1f7ad6e49b83bf2eb26d2f40417" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/jib-cache/selectors/3d9d655c0de49abf47791ff6ba117e3266c32ec6ebbbb5b42cd39427a20f32d3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/jib-cache/selectors/72b2f4f028a8d5efa0072bd3779306627e7dd53daf233876cc2137da1c5f4bfb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/jib-cache/selectors/a43f784eee9210f638d420b437f73fc728f32e732f3feeb7388ee8b1cc5bdbf6" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/jib-cache/selectors/c195e06dd6a96396907a9e47f03586a6b7118c69aed23167023ba397576f9262" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/surefire-reports/2024-12-27T16-54-21_084.dumpstream" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.eazybytes.accounts.AccountsApplicationTests.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/surefire-reports/com.eazybytes.accounts.AccountsApplicationTests.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/com/eazybytes/accounts/AccountsApplicationTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/mvnw" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvnw.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/mvnw.cmd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dctechlabs/accounts/AccountsApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dctechlabs/accounts/AccountsApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dctechlabs/accounts/audit/AuditAwareImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dctechlabs/accounts/audit/AuditAwareImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dctechlabs/accounts/config/kafka/KafkaProducerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dctechlabs/accounts/config/kafka/KafkaProducerConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dctechlabs/accounts/config/kafka/KafkaTopicConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dctechlabs/accounts/config/kafka/KafkaTopicConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dctechlabs/accounts/config/kafka/sender/KafkaMessageSender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dctechlabs/accounts/config/kafka/KafkaMessageSender.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dctechlabs/accounts/config/kafka/serializer/CustomerSerializer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dctechlabs/accounts/controller/AccountsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dctechlabs/accounts/controller/AccountsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dctechlabs/accounts/controller/TransferController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dctechlabs/accounts/entity/Account.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dctechlabs/accounts/entity/BaseEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dctechlabs/accounts/entity/BaseEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dctechlabs/accounts/entity/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dctechlabs/accounts/entity/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dctechlabs/accounts/entity/Transfer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dctechlabs/accounts/exception/CustomerAlreadyExistsException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dctechlabs/accounts/exception/CustomerAlreadyExistsException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dctechlabs/accounts/exception/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dctechlabs/accounts/exception/GlobalExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dctechlabs/accounts/exception/ResourceNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dctechlabs/accounts/exception/ResourceNotFoundException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dctechlabs/accounts/mapper/AccountsMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dctechlabs/accounts/mapper/AccountsMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dctechlabs/accounts/mapper/CustomerMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dctechlabs/accounts/mapper/CustomerMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dctechlabs/accounts/repository/AccountsRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dctechlabs/accounts/repository/AccountsRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dctechlabs/accounts/repository/CustomerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dctechlabs/accounts/repository/CustomerRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dctechlabs/accounts/repository/TransferRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dctechlabs/accounts/request/AccountsRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dctechlabs/accounts/request/CustomerRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dctechlabs/accounts/request/TransferRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dctechlabs/accounts/response/AccountsContactInfoResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dctechlabs/accounts/response/AccountsResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dctechlabs/accounts/response/ApiResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dctechlabs/accounts/response/ErrorResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dctechlabs/accounts/service/IAccountsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dctechlabs/accounts/service/IAccountsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dctechlabs/accounts/service/IScheduledTransferService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dctechlabs/accounts/service/impl/AccountsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dctechlabs/accounts/service/impl/AccountsServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dctechlabs/accounts/service/impl/ScheduledTransferServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dctechlabs/accounts/utils/constants/AccountType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dctechlabs/accounts/utils/constants/AccountsConstants.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/dctechlabs/accounts/AccountApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/dctechlabs/accounts/AccountsApplicationTests.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "Mohamed-Safras-Ibn-Wadood"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Mohamed-safras/spring-boot-microservices.git",
+    "accountId": "b6758717-e915-44a4-a52b-a400c2b4f7ec"
+  }
+}]]></component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 7
+}]]></component>
+  <component name="ProjectId" id="2rHzu04l58zYPdaV4V6a59IJ8Dz" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "Spring Boot.AccountsApplication.executor": "Run",
+    "git-widget-placeholder": "feature/accounts",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/MyBank/accounts",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\MyBank\accounts" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\MyBank\accounts" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-fdfe4dae3a2d-intellij.indexing.shared.core-IU-243.21565.193" />
+        <option value="bundled-js-predefined-d6986cc7102b-e768b9ed790e-JavaScript-IU-243.21565.193" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="fa17c486-b091-4d59-90be-c0ac166b1119" name="Changes" comment="" />
+      <created>1736231009270</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1736231009270</updated>
+      <workItem from="1736231014280" duration="708000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="accounts has been updated" />
+    <option name="LAST_COMMIT_MESSAGE" value="accounts has been updated" />
+  </component>
+</project>
