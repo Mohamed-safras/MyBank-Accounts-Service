@@ -1,20 +1,22 @@
 package com.dctechlabs.accounts.mapper;
 
-import com.dctechlabs.accounts.request.CustomerRequest;
+import com.dctechlabs.accounts.dto.CustomerDto;
 import com.dctechlabs.accounts.entity.Customer;
 
 public class CustomerMapper {
-    public static CustomerRequest mapToCustomerDto(Customer customer, CustomerRequest customerRequest){
-        customerRequest.setCustomerEmail(customer.getCustomerEmail());
-        customerRequest.setCustomerName(customer.getCustomerName());
-        customerRequest.setMobileNumber(customer.getMobileNumber());
-        return customerRequest;
+
+    public static CustomerDto mapToCustomerDto(Customer customer, CustomerDto customerDto) {
+        customerDto.setName(customer.getName());
+        customerDto.setEmail(customer.getEmail());
+        customerDto.setMobileNumber(customer.getMobileNumber());
+        return customerDto;
     }
 
-    public static Customer mapToCustomer(CustomerRequest customerRequest, Customer customer){
-        customer.setCustomerEmail(customerRequest.getCustomerEmail());
-        customer.setCustomerName(customerRequest.getCustomerName());
-        customer.setMobileNumber(customerRequest.getMobileNumber());
+    public static Customer mapToCustomer(CustomerDto customerDto, Customer customer) {
+        customer.setName(customerDto.getName());
+        customer.setEmail(customerDto.getEmail());
+        customer.setMobileNumber(customerDto.getMobileNumber());
         return customer;
     }
+
 }

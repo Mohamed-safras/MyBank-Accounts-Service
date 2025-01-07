@@ -1,35 +1,35 @@
 package com.dctechlabs.accounts.service;
 
-import com.dctechlabs.accounts.entity.Account;
-import com.dctechlabs.accounts.request.CustomerRequest;
+import com.dctechlabs.accounts.dto.CustomerDto;
 
 public interface IAccountsService {
 
     /**
      *
-     * @param customerRequest - CustomerDto object
+     * @param customerDto - CustomerDto Object
      */
-    Account createAccount(CustomerRequest customerRequest);
+    void createAccount(CustomerDto customerDto);
 
     /**
      *
-     * @param mobileNumber - fetchAccount takes mobile number as a parameter
-     * @return - it returns CustomerDto object
+     * @param mobileNumber - Input Mobile Number
+     * @return Accounts Details based on a given mobileNumber
      */
-    CustomerRequest fetchAccount(String mobileNumber);
+    CustomerDto fetchAccount(String mobileNumber);
 
     /**
      *
-     * @param customerRequest - updateAccount takes CustomerDto object as a parameter
-     * @return it returns boolean value
+     * @param customerDto - CustomerDto Object
+     * @return boolean indicating if the update of Account details is successful or not
      */
-    boolean updateAccount(CustomerRequest customerRequest);
+    boolean updateAccount(CustomerDto customerDto);
 
     /**
      *
-     * @param mobileNumber - deleteAccount takes mobile number as a parameter
-     * @return it returns boolean value
+     * @param mobileNumber - Input Mobile Number
+     * @return boolean indicating if the delete of Account details is successful or not
      */
     boolean deleteAccount(String mobileNumber);
+
 
 }

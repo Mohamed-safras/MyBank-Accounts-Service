@@ -1,20 +1,22 @@
 package com.dctechlabs.accounts.mapper;
 
-import com.dctechlabs.accounts.entity.Account;
-import com.dctechlabs.accounts.request.AccountsRequest;
+import com.dctechlabs.accounts.dto.AccountsDto;
+import com.dctechlabs.accounts.entity.Accounts;
 
 public class AccountsMapper {
-    public static AccountsRequest mapToAccountsDto(Account account, AccountsRequest accountsRequest) {
-        accountsRequest.setAccountNumber(account.getAccountNumber());
-        accountsRequest.setAccountType(account.getAccountType());
-        accountsRequest.setBranchAddress(account.getBranchAddress());
-        return accountsRequest;
+
+    public static AccountsDto mapToAccountsDto(Accounts accounts, AccountsDto accountsDto) {
+        accountsDto.setAccountNumber(accounts.getAccountNumber());
+        accountsDto.setAccountType(accounts.getAccountType());
+        accountsDto.setBranchAddress(accounts.getBranchAddress());
+        return accountsDto;
     }
 
-    public static Account mapToAccounts(AccountsRequest accountsRequest, Account account){
-        account.setAccountNumber(accountsRequest.getAccountNumber());
-        account.setAccountType(accountsRequest.getAccountType());
-        account.setBranchAddress(accountsRequest.getBranchAddress());
-        return account;
+    public static Accounts mapToAccounts(AccountsDto accountsDto, Accounts accounts) {
+        accounts.setAccountNumber(accountsDto.getAccountNumber());
+        accounts.setAccountType(accountsDto.getAccountType());
+        accounts.setBranchAddress(accountsDto.getBranchAddress());
+        return accounts;
     }
+
 }
